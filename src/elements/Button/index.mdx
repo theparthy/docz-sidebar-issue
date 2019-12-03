@@ -1,0 +1,62 @@
+---
+name: Button
+menu: Elements
+route: /elements/button
+---
+
+import { Playground, Props } from 'docz'
+import { ThumbUp } from 'styled-icons/material';
+import {HashRouter} from 'react-router-dom'
+
+import Button, {LinkButton} from '../Button'
+import Box from '../Box'
+
+# Button
+
+## Properties
+
+<Props of={Button} />
+
+## Basic usage
+
+<Playground>
+<Box>
+    <Box>
+        <Button variant="primary" mr={3}>
+            Primary
+        </Button>
+        <Button variant="secondary" mr={3}>
+            Secondary
+        </Button>
+        <Button mr={3} isLoading>
+            Teal outline
+        </Button>
+    </Box>
+    <Box mt={3}>
+        <Button mr={3} icon={<ThumbUp/>}>
+            Icon Button
+        </Button>
+        <Button mr={3} icon={<ThumbUp/>} iconRight>
+            IconRight Button
+        </Button>
+    </Box>
+    <Box mt={3}>
+        <Button mt={3} isExpanded>
+            Button isExpanded
+        </Button>
+    </Box>
+    <Box mt={3}>
+        <HashRouter>
+            <LinkButton id={'link-button'} mr={3} to="/somewhere">
+                Link rendered as Button
+            </LinkButton>
+            <LinkButton id={'link-button-icon'} mr={3} icon={<ThumbUp/>} to="/somewhere">
+                Link rendered Icon Button
+            </LinkButton>
+            <LinkButton id={'link-button-icon-right'} mr={3} icon={<ThumbUp/>} iconRight to="/somewhere">
+                Link rendered IconRight Button
+            </LinkButton>
+        </HashRouter>
+    </Box>
+</Box>
+</Playground>
